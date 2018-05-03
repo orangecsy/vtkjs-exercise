@@ -1,0 +1,22 @@
+{
+  "name": "vtkjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build:release": "webpack -p",
+    "start": "webpack-dev-server --content-base ./dist",
+    "commit": "git cz",
+    "semantic-release": "semantic-release"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vtk.js": "^6.4.22"
+  },
+  "devDependencies": {
+    "kw-web-suite": "^6.0.2"
+  }
+}

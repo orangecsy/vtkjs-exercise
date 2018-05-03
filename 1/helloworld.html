@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript" src="https://unpkg.com/vtk.js"></script>  
+  <script type="text/javascript">  
+      var cone = vtk.Filters.Sources.vtkConeSource.newInstance();  
+      var mapper = vtk.Rendering.Core.vtkMapper.newInstance();  
+      var actor = vtk.Rendering.Core.vtkActor.newInstance();  
+      mapper.setInputConnection(cone.getOutputPort());  
+      actor.setMapper(mapper);  
+    
+      var fullRender = vtk.Rendering.Misc.vtkFullScreenRenderWindow.newInstance();  
+      var render = fullRender.getRenderer();  
+      render.addActor(actor);  
+      render.resetCamera();  
+    
+      var renderWindow = fullRender.getRenderWindow();  
+      renderWindow.render();  
+  </script>
+</body>
+</html>
